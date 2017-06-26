@@ -36,7 +36,7 @@ lookup = (summoner, message) => {
     const fs = require('fs');
     const launchConfig = {
         chromeFlags: [
-            `--window-size=1024,1024`,
+            `--window-size=1920,1080`,
             '--disable-gpu',
             '--headless'
         ]
@@ -59,17 +59,7 @@ lookup = (summoner, message) => {
             protocol.close();
             chrome.kill(); // Kill Chrome.
             message.reply({ files: ['./result.png']});
-
-            //message.reply({'embed': {
-             //   title: result.result.value,
-             //   url: lolSkillUrl,
-             //   image: {
-             //       url: './demo.png'
-             //   }
-            //}});
         });
-
-
     })();
 };
 
