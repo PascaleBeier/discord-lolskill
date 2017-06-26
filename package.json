@@ -1,0 +1,28 @@
+{
+  "name": "discord-lolskill",
+  "version": "1.0.0",
+  "description": "Query LoLSkill through Discord.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PascaleBeier/discord-lolskill.git"
+  },
+  "keywords": [
+    "discord",
+    "league-of-legends",
+    "lolskill",
+    "bot"
+  ],
+  "author": "Pascale Beier <mail@pascalebeier.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PascaleBeier/discord-lolskill/issues"
+  },
+  "homepage": "https://github.com/PascaleBeier/discord-lolskill#readme",
+  "dependencies": {
+    "bufferutil": "^3.0.1",
+    "chrome-remote-interface": "^0.23.3",
+    "discord.js": "^11.1.0",
+    "lighthouse": "^2.1.0"
+  }
+}
