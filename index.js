@@ -65,10 +65,7 @@ client.on('message', msg => {
 });
 
 client.on('presenceUpdate', (oldMember, newMember) => {
-    console.log(newMember.presence);
-    console.log(newMember.presence.game);
-
-    if (newMember.presence.game.hasOwnProperty('name') &&
+    if (newMember.presence.game !== null &&
         newMember.presence.game.name === 'League of Legends')
     {
         lookup(newMember.displayName, (data) => {
