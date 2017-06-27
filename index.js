@@ -55,7 +55,9 @@ lookup = async (summoner, callback) => {
 };
 
 client.on('ready', () => {
-    client.user.setAvatar('./avatar.png');
+    if (!client.user.avatarURL) {
+        client.user.setAvatar('./avatar.png');
+    }
 });
 
 client.on('message', msg => {
@@ -65,7 +67,8 @@ client.on('message', msg => {
 });
 
 client.on('presenceUpdate', (oldMember, newMember) => {
-    if (newMember.presence.game !== null &&
+    if (oldMember.presence.game === null &&
+        newMember.presence.game !== null &&
         newMember.presence.game.name === 'League of Legends')
     {
         lookup(newMember.displayName, (data) => {
