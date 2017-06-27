@@ -67,6 +67,7 @@ client.on('message', msg => {
 
 client.on('presenceUpdate', (oldMember, newMember) => {
     if (
+        newMember.presence.hasOwnProperty('game') &&
         !newMember.presence.game.equals(oldMember.presence.game) &&
         newMember.presence.game.name === 'League of Legends')
     {
