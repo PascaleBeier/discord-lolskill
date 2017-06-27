@@ -1,6 +1,6 @@
 {
   "name": "discord-lolskill",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Query LoLSkill through Discord.",
   "main": "index.js",
   "repository": {
@@ -23,6 +23,7 @@
     "bufferutil": "^3.0.1",
     "chrome-remote-interface": "^0.23.3",
     "discord.js": "^11.1.0",
-    "lighthouse": "^2.1.0"
+    "lighthouse": "^2.1.0",
+    "sharp": "^0.18.1"
   }
 }
