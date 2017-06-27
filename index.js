@@ -1,3 +1,4 @@
+const auth = require('./auth.json');
 const Discord = require('discord.js');
 const chromeLauncher = require('lighthouse/chrome-launcher/chrome-launcher');
 const CDP = require('chrome-remote-interface');
@@ -14,7 +15,6 @@ const launchConfig = {
         '--headless'
     ]
 };
-const botToken = 'MzI4OTI2MTA3MDMyMDkyNjgy.DDK_5A.i55kp8SlziJr3VfYu3d4QuE3I1c';
 const commandPrefix = '!lolskill';
 const commandDelimiter = '\"';
 const client = new Discord.Client();
@@ -24,10 +24,12 @@ formatCommand = message => {
     if (!args || args.length < 2) {
         return message.reply(`Usage: ${commandPrefix} ${commandDelimiter}${message.author.username}${commandDelimiter}`);
     }
-    return lookup(args[1], message);
+    return lookup(args[1], (data) => {
+        message.reply({files: [{attachment: data, name: 'lolskill.webp'}]});
+    });
 };
 
-lookup = async (summoner, message) => {
+lookup = async (summoner, callback) => {
     const chrome = await chromeLauncher.launch(launchConfig);
     const protocol = await CDP({port: chrome.port});
     const {Page, Runtime} = protocol;
@@ -45,7 +47,7 @@ lookup = async (summoner, message) => {
             .extract({left: 30, top: cropOffTop, width: width - 75, height: height - cropOffTop - 10})
             .webp({quality: 100, lossless: true})
             .toBuffer((err, data) => {
-                message.reply({files: [{attachment: data, name: 'lolskill.webp'}]});
+                callback(data);
             });
 
         protocol.close();
@@ -53,10 +55,26 @@ lookup = async (summoner, message) => {
     });
 };
 
+client.on('ready', () => {
+    client.user.setAvatar('./avatar.png');
+});
+
 client.on('message', msg => {
     if (msg.content.startsWith(commandPrefix)) {
         formatCommand(msg);
     }
 });
 
-client.login(botToken);
+client.on('presenceUpdate', (oldMember, newMember) => {
+    if (
+        !newMember.presence.game.equals(oldMember.presence.game) &&
+        newMember.presence.game.name === 'League of Legends')
+    {
+        lookup(newMember.displayName, (data) => {
+            const channel = client.channels.find('name', 'general');
+            channel.send(({files: [{attachment: data, name: 'lolskill.webp'}]}));
+        });
+    }
+});
+
+client.login(auth.token);
