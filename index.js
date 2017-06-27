@@ -1,4 +1,3 @@
-const auth = require('./auth.json');
 const Discord = require('discord.js');
 const chromeLauncher = require('lighthouse/chrome-launcher/chrome-launcher');
 const CDP = require('chrome-remote-interface');
@@ -77,4 +76,4 @@ client.on('presenceUpdate', (oldMember, newMember) => {
     }
 });
 
-client.login(auth.token);
+client.login('MzI4OTI2MTA3MDMyMDkyNjgy.DDK_5A.i55kp8SlziJr3VfYu3d4QuE3I1c');
