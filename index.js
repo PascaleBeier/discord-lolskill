@@ -66,15 +66,16 @@ client.on('message', msg => {
 });
 
 client.on('presenceUpdate', (oldMember, newMember) => {
-    if (
-        newMember.presence.hasOwnProperty('game') &&
-        !newMember.presence.game.equals(oldMember.presence.game) &&
-        newMember.presence.game.name === 'League of Legends')
-    {
-        lookup(newMember.displayName, (data) => {
-            const channel = client.channels.find('name', 'general');
-            channel.send(({files: [{attachment: data, name: 'lolskill.webp'}]}));
-        });
+    if (newMember.presence.hasOwnProperty('game')) {
+        if (
+            !newMember.presence.game.equals(oldMember.presence.game) &&
+            newMember.presence.game.name === 'League of Legends')
+        {
+            lookup(newMember.displayName, (data) => {
+                const channel = client.channels.find('name', 'general');
+                channel.send(({files: [{attachment: data, name: 'lolskill.webp'}]}));
+            });
+        }
     }
 });
 
