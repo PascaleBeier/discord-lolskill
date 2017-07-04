@@ -1,6 +1,6 @@
 {
   "name": "discord-lolskill",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Query LoLSkill through Discord.",
   "main": "index.js",
   "repository": {

@@ -10,7 +10,6 @@ const cropOffTop = 308;
 const launchConfig = {
   chromeFlags: [
     `--window-size=${width},${height}`,
-    "--single-process",
     "--disable-gpu",
     "--headless"
   ]
