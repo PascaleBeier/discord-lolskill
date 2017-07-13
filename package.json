@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/PascaleBeier/discord-lolskill.git"
   },
-    "scripts": {
+  "scripts": {
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/PascaleBeier/discord-lolskill#readme",
   "dependencies": {
-    "bufferutil": "^3.0.1",
+    "bufferutil": "^3.0.2",
     "chrome-remote-interface": "^0.23.3",
     "discord.js": "^11.1.0",
     "lighthouse": "^2.2.1",
