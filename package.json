@@ -30,9 +30,9 @@
   "homepage": "https://github.com/PascaleBeier/discord-lolskill#readme",
   "dependencies": {
     "bufferutil": "^3.0.2",
+    "chrome-launcher": "^0.3.1",
     "chrome-remote-interface": "^0.23.3",
     "discord.js": "^11.1.0",
-    "lighthouse": "^2.2.1",
     "sharp": "^0.18.2"
   },
   "devDependencies": {

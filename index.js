@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const chromeLauncher = require("lighthouse/chrome-launcher/chrome-launcher");
+const chromeLauncher = require("chrome-launcher");
 const CDP = require("chrome-remote-interface");
 const fs = require("fs");
 const sharp = require("sharp");
