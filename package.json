@@ -30,19 +30,19 @@
   "homepage": "https://github.com/PascaleBeier/discord-lolskill#readme",
   "dependencies": {
     "bufferutil": "^3.0.2",
-    "chrome-launcher": "^0.3.1",
-    "chrome-remote-interface": "^0.23.3",
+    "chrome-launcher": "^0.4.0",
+    "chrome-remote-interface": "^0.24.3",
     "discord.js": "^11.1.0",
     "sharp": "^0.18.2"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
+    "eslint": "^4.2.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-config-prettier": "^2.3.0",
-    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-prettier": "^2.1.2",
-    "husky": "^0.14.2",
-    "lint-staged": "^4.0.0",
-    "prettier": "^1.5.2"
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
+    "prettier": "^1.5.3"
   }
 }
